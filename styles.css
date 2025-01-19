@@ -6,26 +6,31 @@ body {
     padding: 0;
 }
 
-/* 页眉 */
+/* 页眉（固定在顶部） */
 header {
     background-color: #4CAF50;
     color: white;
     padding: 20px;
     text-align: center;
-    position: relative;
+    position: fixed; /* 设置为固定定位 */
+    top: 0; /* 固定在页面顶部 */
+    left: 0;
+    width: 100%; /* 让标题横跨整个页面宽度 */
+    z-index: 10; /* 确保标题在其他内容上方 */
 }
 
 /* 按钮 */
 button {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     padding: 10px 20px;
     background-color: #0366d6;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 15; /* 确保按钮在选项卡区域之上 */
 }
 
 button:hover {
@@ -45,12 +50,13 @@ button:hover {
     top: 100px; /* 向下偏移，避免遮挡标题 */
     left: 0;
     height: calc(100% - 100px); /* 填满页面剩余部分 */
-    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* 默认隐藏（左侧移动） */
+    transition: transform 0.3s ease; /* 使用 transform 实现滑动效果 */
 }
 
-/* 隐藏时的样式 */
-.tabs.hidden {
-    transform: translateX(-100%);
+/* 显示选项卡 */
+.tabs.show {
+    transform: translateX(0); /* 显示时将选项卡恢复到正常位置 */
 }
 
 /* 每个选项卡 */
@@ -82,11 +88,19 @@ button:hover {
 .content {
     margin-left: 220px; /* 留出空间给选项卡 */
     padding: 20px;
+    margin-top: 100px; /* 留出空间避免内容被固定头部覆盖 */
 }
 
 /* 每个选项卡的内容区 */
 .tab-content {
     display: none;
+    opacity: 0; /* 初始状态下不可见 */
+    transition: opacity 0.3s ease-in-out; /* 添加透明度过渡 */
+}
+
+.tab-content.show {
+    display: block; /* 显示时使用 display: block */
+    opacity: 1; /* 显示时透明度为 1 */
 }
 
 h2 {
