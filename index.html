@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗氏之子研发部官方网站</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 引入 MathJax 库 -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>罗氏之子研发部官方网站</h1>
+        <button id="toggleTabsButton" onclick="toggleTabs()">隐藏/显示 选项卡</button>
+    </header>
+
+    <nav class="tabs" id="tabs">
+        <a href="#" class="tab" onclick="showTab('tab1')">选项卡 1</a>
+        <a href="#" class="tab" onclick="showTab('tab2')">选项卡 2</a>
+        <a href="#" class="tab" onclick="showTab('tab3')">选项卡 3</a>
+    </nav>
+
+    <div class="content">
+        <div id="tab1" class="tab-content">
+            <h2>选项卡 1 标题</h2>
+            <h3>副标题 1</h3>
+            <div id="markdownContent1"></div> <!-- 用于显示 Markdown 内容 -->
+        </div>
+        <div id="tab2" class="tab-content" style="display:none;">
+            <h2>选项卡 2 标题</h2>
+            <h3>副标题 2</h3>
+            <div id="markdownContent2"></div> <!-- 用于显示 Markdown 内容 -->
+        </div>
+        <div id="tab3" class="tab-content" style="display:none;">
+            <h2>选项卡 3 标题</h2>
+            <h3>副标题 3</h3>
+            <div id="markdownContent3"></div> <!-- 用于显示 Markdown 内容 -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

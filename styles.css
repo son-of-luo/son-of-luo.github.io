@@ -1,0 +1,103 @@
+/* 全局设置 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 页眉 */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* 按钮 */
+button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #0366d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* 选项卡的垂直排列 */
+.tabs {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: flex-start;
+    background-color: #f6f8fa;
+    border-right: 2px solid #d1d5da;
+    padding: 10px;
+    width: 200px; /* 选项卡宽度 */
+    position: fixed; /* 固定在左侧 */
+    top: 100px; /* 向下偏移，避免遮挡标题 */
+    left: 0;
+    height: calc(100% - 100px); /* 填满页面剩余部分 */
+    transition: transform 0.3s ease;
+}
+
+/* 隐藏时的样式 */
+.tabs.hidden {
+    transform: translateX(-100%);
+}
+
+/* 每个选项卡 */
+.tab {
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    color: #24292f;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s, border 0.3s;
+    display: block;
+}
+
+.tab:hover {
+    background-color: #e1e4e8;
+}
+
+.tab.active {
+    background-color: white;
+    border: 1px solid #d1d5da;
+    border-left: none;
+    color: #0366d6;
+}
+
+/* 内容区域 */
+.content {
+    margin-left: 220px; /* 留出空间给选项卡 */
+    padding: 20px;
+}
+
+/* 每个选项卡的内容区 */
+.tab-content {
+    display: none;
+}
+
+h2 {
+    color: #333;
+}
+
+h3 {
+    color: #666;
+}
+
+p {
+    font-size: 18px;
+    color: #444;
+}
